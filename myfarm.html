@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmventory Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo"><img src="images/logo-name.png" /></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li class="active"><a href="myfarm.html"><i class="fas fa-seedling"></i> My Farms</a></li>
+                    <li><a href="#"><i class="fas fa-warehouse"></i> Inventory</a></li>
+                    <li><a href="#"><i class="fas fa-store"></i> Marketplace</a></li>
+                    <li><a href="#"><i class="fas fa-leaf"></i> Harvest Log</a></li>
+                    <li><a href="#"><i class="fas fa-bell"></i> Active Alerts</a></li>
+                    <li><a href="#"><i class="fas fa-upload"></i> Bulk Upload</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                    <li><a href="#"><i class="fas fa-cogs"></i> Settings</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Help Center</a></li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+            </div>
+            <div class="footer-copyright">© 2025 Farmventory</div>
+        </aside>
+
+        <main class="main-content">
+            
+            
+            
+            
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="user-info">
+                    <i class="fas fa-bell notification-icon"></i>
+                    <i class="fas fa-user-circle user-profile-icon"></i>
+                    <i class="fas fa-bars menu-toggle-icon"></i>
+                </div>
+            </header>
+
+            <section class="welcome-section">
+                <h2>My Farm</h2>
+<!--                <p>You haven't logged any new harvest this week. Don't forget to track it to boost your farm records.</p>-->
+                <button class="add-new-btn" onclick="location.href='add-farm.html'">
+  <i class="fas fa-plus"></i> Add New Farm
+</button>
+            </section>
+
+            
+                
+            <div class="main-card">
+            
+            <div class="cardchild">
+        <img src="images/Orange-.png" alt="Yam Barn Background" class="card-background-image">
+
+        <div class="content-overlay">
+            <div class="grid-header">
+                <h1>Kishi Area</h1>
+            </div>
+
+            <div class="grid-main-info">
+                <div class="yam-barn-select">
+                    <span>Yam Barn</span>
+                    <span class="dropdown-icon"></span>
+                </div>
+                <div class="more-details"><a href="#">More Details &gt;</a></div>
+            </div>
+
+            <div class="data-display">
+                <div class="data-item">
+                    <span class="label">Tuber Health</span>
+                    <span class="value">Excellent</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Harvest Time</span>
+                    <span class="value">Jan. 1, 2026</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Harvest Volume</span>
+                    <span class="value">100.0KG / HA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+                
+                
+                <div class="cardchild">
+        <img src="images/yam-barn.png" alt="Yam Barn Background" class="card-background-image">
+
+        <div class="content-overlay">
+            <div class="grid-header">
+                <h1>Kishi Area</h1>
+            </div>
+
+            <div class="grid-main-info">
+                <div class="yam-barn-select">
+                    <span>Yam Barn</span>
+                    <span class="dropdown-icon"></span>
+                </div>
+                <div class="more-details"><a href="#">More Details &gt;</a></div>
+            </div>
+
+            <div class="data-display">
+                <div class="data-item">
+                    <span class="label">Tuber Health</span>
+                    <span class="value">Excellent</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Harvest Time</span>
+                    <span class="value">Jan. 1, 2026</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Harvest Volume</span>
+                    <span class="value">100.0KG / HA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+                
+                                <div class="cardchild">
+        <img src="images/Maize-Farming-Farmsquare.jpg" alt="Yam Barn Background" class="card-background-image">
+
+        <div class="content-overlay">
+            <div class="grid-header">
+                <h1>Kishi Area</h1>
+            </div>
+
+            <div class="grid-main-info">
+                <div class="yam-barn-select">
+                    <span>Yam Barn</span>
+                    <span class="dropdown-icon"></span>
+                </div>
+                <div class="more-details"><a href="#">More Details &gt;</a></div>
+            </div>
+
+            <div class="data-display">
+                <div class="data-item">
+                    <span class="label">Tuber Health</span>
+                    <span class="value">Excellent</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Harvest Time</span>
+                    <span class="value">Jan. 1, 2026</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Harvest Volume</span>
+                    <span class="value">100.0KG / HA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+            
+
+            
+
+            
+
+            </main>
+    </div>
+
+    <aside class="notification-panel">
+        <div class="panel-header">
+            <h3>Notifications</h3>
+            <button class="close-panel-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="icon-wrapper"><i class="fas fa-bell"></i></div>
+                <div class="notification-content">
+                    <p>New input received: <strong>Fertilizer Batch 3</strong></p>
+                    <small>2 hours ago</small>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="icon-wrapper"><i class="fas fa-seedling"></i></div>
+                <div class="notification-content">
+                    <p><strong>Maize farm harvest due</strong> in 5 days.</p>
+                    <small>Yesterday</small>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="icon-wrapper"><i class="fas fa-usd-circle"></i></div>
+                <div class="notification-content">
+                    <p>Payment of <strong>₦250k received</strong> for Yam.</p>
+                    <small>June 10, 2025</small>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="icon-wrapper"><i class="fas fa-clipboard-list"></i></div>
+                <div class="notification-content">
+                    <p>Reminder: <strong>Schedule inventory audit</strong> this week.</p>
+                    <small>June 8, 2025</small>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="icon-wrapper"><i class="fas fa-tasks"></i></div>
+                <div class="notification-content">
+                    <p>Task completed: "Feed the Fish".</p>
+                    <small>June 5, 2025</small>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="clear-all-btn">Clear All</button>
+            <button class="view-all-btn">View All</button>
+        </div>
+    </aside>
+
+    <aside class="user-profile-panel">
+        <div class="panel-header">
+            <h3>User Profile</h3>
+            <button class="close-panel-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="profile-info">
+            <img src="images/profile.jpg" alt="User Profile Picture" class="profile-picture">
+            <h4>Amina Yahaya</h4>
+            <p class="email">amina.y@farmventory.com</p>
+            <p class="role">Farm Owner</p>
+        </div>
+        <nav class="profile-nav">
+            <ul>
+                <li><a href="#"><i class="fas fa-user-edit"></i> Edit Profile</a></li>
+                <li><a href="#"><i class="fas fa-key"></i> Change Password</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Account Settings</a></li>
+                <li><a href="#"><i class="fas fa-wallet"></i> Billing & Payments</a></li>
+            </ul>
+        </nav>
+        <div class="panel-footer">
+            <button class="logout-panel-btn">Log Out</button>
+        </div>
+    </aside>
+
+    <footer class="dashboard-footer">
+        <div class="footer-links">
+            <a href="#">Need help?</a>
+            <span class="separator">--</span>
+            <a href="#">Help Center</a>
+            <span class="separator">--</span>
+            <a href="#">FAQ</a>
+            <span class="separator">--</span>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+const xArray = ["Yam", "Orange", "Maize"];
+const yArray = [45, 30, 15];
+
+const layout = {title:"Production Overview"};
+
+const data = [{labels:xArray, values:yArray, hole:.54, type:"pie"}];
+
+Plotly.newPlot("myPlot", data, layout);
+</script>
+</body>
+</html>
