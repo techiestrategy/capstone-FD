@@ -65,7 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    updateCardDisplay();
+    if (farmCards.length > 0) {
+    requestAnimationFrame(() => {
+        updateCardDisplay();
+    });
+}
 
 
     // --- Global Panel & Overlay Logic ---

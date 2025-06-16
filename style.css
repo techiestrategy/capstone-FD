@@ -1552,3 +1552,223 @@ ul {
         flex-direction: column; /* Stack data items vertically */
     }
 }
+
+
+/* Form farm */
+.farm-form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 900px; /* Adjust max-width as needed */
+    box-sizing: border-box;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee; /* Light separator */
+}
+
+.form-header h1 {
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+}
+
+.save-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #555;
+}
+
+/* Form Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns by default */
+    gap: 30px 40px; /* Row gap, Column gap */
+}
+
+.form-field {
+    margin-bottom: 0; /* Remove default margin as grid handles spacing */
+}
+
+.form-field label,
+.checkbox-group .group-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: #555;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light gray background for inputs */
+    padding-right: 10px; /* Space for the icon */
+    height: 40px; /* Fixed height for inputs */
+}
+
+.input-wrapper input {
+    flex-grow: 1;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1em;
+    background-color: transparent; /* Make input background transparent */
+    outline: none; /* Remove outline on focus */
+}
+
+.input-wrapper input:focus {
+    background-color: #fff; /* White background on focus */
+}
+
+.input-wrapper input::placeholder {
+    color: #aaa;
+}
+
+.help-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #fff;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: help;
+    flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+/* Checkbox Groups */
+.checkbox-group {
+    margin-top: 15px; /* Space between field and checkbox group */
+    margin-bottom: 20px;
+    grid-column: span 1; /* By default, it takes one column */
+}
+
+.checkbox-options {
+    display: flex;
+    flex-wrap: wrap; /* Allow checkboxes to wrap */
+    gap: 15px 25px; /* Vertical and horizontal gap */
+}
+
+.checkbox-options label {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #333;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent labels from breaking */
+}
+
+.checkbox-options input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px; /* Custom size for checkboxes */
+    height: 18px;
+    accent-color: #333; /* For checked state */
+}
+
+/* Form Footer */
+.form-footer {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Light separator */
+}
+
+.submit-button {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #555;
+}
+
+/* Validation styling */
+.form-field input:invalid:not(:placeholder-shown),
+.form-field.error .input-wrapper input {
+    border-color: #e74c3c;
+}
+
+.validation-message {
+    color: #e74c3c;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.form-field.error .validation-message,
+.checkbox-group.error .validation-message {
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        gap: 20px; /* Reduce gap */
+    }
+
+    .form-header {
+        flex-direction: column; /* Stack header items */
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .form-header h1 {
+        font-size: 1.8em;
+    }
+
+    .save-button {
+        width: 100%; /* Full width button */
+        text-align: center;
+    }
+
+    .checkbox-group {
+        grid-column: span 1; /* Ensure it still takes one column in single column layout */
+    }
+}
+
+@media (max-width: 480px) {
+    .farm-form-container {
+        padding: 20px 25px;
+    }
+
+    .form-header h1 {
+        font-size: 1.6em;
+    }
+
+    .submit-button {
+        width: 100%;
+        text-align: center;
+        padding: 10px 20px;
+    }
+}

@@ -45,122 +45,79 @@
                 </div>
             </header>
 
-            <section class="welcome-section">
-                <h2>My Farms</h2>
-<!--
-                <p>You haven't logged any new harvest this week. Don't forget to track it to boost your farm records.</p>
-                <button class="add-new-btn"><i class="fas fa-plus"></i> Add New <i class="fas fa-caret-down"></i></button>
---><button class="add-new-btn" onclick="location.href='add-farm.html'">
-  <i class="fas fa-plus"></i> Add New Farm
-</button>
-            </section>
+            
 
             
 
             
-                            <div class="main-card">
-            
-            <div class="cardchild">
-        <img src="images/Orange-.png" alt="Yam Barn Background" class="card-background-image">
-
-        <div class="content-overlay">
-            <div class="grid-header">
-                <h1>Kishi Area</h1>
+            <div class="farm-form-container">
+                <header class="form-header">
+                    <h1>Add New Farm</h1>
+                    
+                </header>
+        
+                <form id="addFarmForm">
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="farmName">Enter Farm Name</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="farmName" name="farmName" placeholder="" required>
+                                <span class="help-icon" title="Enter the name of your farm">?</span>
+                            </div>
+                        </div>
+        
+                        <div class="form-field">
+                            <label for="farmLocation">Enter Farm Location</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="farmLocation" name="farmLocation" placeholder="" required>
+                                <span class="help-icon" title="Enter the geographical location of your farm">?</span>
+                            </div>
+                        </div>
+        
+                        <div class="form-field">
+                            <label for="farmSize">Farm Size</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="farmSize" name="farmSize" placeholder="" step="0.01" min="0" required>
+                                <span class="help-icon" title="Enter the size of your farm (e.g., in hectares or acres)">?</span>
+                            </div>
+                        </div>
+        
+                        <div></div>
+        
+                        <div class="checkbox-group">
+                            <label class="group-label">Select Crop Types</label>
+                            <div class="checkbox-options">
+                                <label><input type="checkbox" name="cropType" value="grains"> Grains</label>
+                                <label><input type="checkbox" name="cropType" value="legumes"> Legumes</label>
+                                <label><input type="checkbox" name="cropType" value="fruits"> Fruits</label>
+                                <label><input type="checkbox" name="cropType" value="vegetables"> Vegetables</label>
+                                <label><input type="checkbox" name="cropType" value="others-crop"> Others</label>
+                            </div>
+                            <p class="validation-message" id="cropTypeError"></p>
+                        </div>
+        
+                        <div></div>
+        
+                        <div class="checkbox-group">
+                            <label class="group-label">Select Livestock Types</label>
+                            <div class="checkbox-options">
+                                <label><input type="checkbox" name="livestockType" value="cattles"> Cattles</label>
+                                <label><input type="checkbox" name="livestockType" value="poultry"> Poultry</label>
+                                <label><input type="checkbox" name="livestockType" value="sheeps"> Sheeps</label>
+                                <label><input type="checkbox" name="livestockType" value="fish"> Fish</label>
+                                <label><input type="checkbox" name="livestockType" value="others-livestock"> Others</label>
+                            </div>
+                            <p class="validation-message" id="livestockTypeError"></p>
+                        </div>
+        
+                        <div></div>
+                    </div>
+        
+                    <div class="form-footer">
+                        <button type="submit" class="submit-button">Submit Details</button>
+                    </div>
+                </form>
             </div>
-
-            <div class="grid-main-info">
-                <div class="yam-barn-select">
-                    <span>Yam Barn</span>
-                    <span class="dropdown-icon"></span>
-                </div>
-                <div class="more-details"><a href="#">More Details &gt;</a></div>
-            </div>
-
-            <div class="data-display">
-                <div class="data-item">
-                    <span class="label">Tuber Health</span>
-                    <span class="value">Excellent</span>
-                </div>
-                <div class="data-item">
-                    <span class="label">Harvest Time</span>
-                    <span class="value">Jan. 1, 2026</span>
-                </div>
-                <div class="data-item">
-                    <span class="label">Harvest Volume</span>
-                    <span class="value">100.0KG / HA</span>
-                </div>
-            </div>
-        </div>
-    </div>
-                
-                
-                <div class="cardchild">
-        <img src="images/yam-barn.png" alt="Yam Barn Background" class="card-background-image">
-
-        <div class="content-overlay">
-            <div class="grid-header">
-                <h1>Kishi Area</h1>
-            </div>
-
-            <div class="grid-main-info">
-                <div class="yam-barn-select">
-                    <span>Yam Barn</span>
-                    <span class="dropdown-icon"></span>
-                </div>
-                <div class="more-details"><a href="#">More Details &gt;</a></div>
-            </div>
-
-            <div class="data-display">
-                <div class="data-item">
-                    <span class="label">Tuber Health</span>
-                    <span class="value">Excellent</span>
-                </div>
-                <div class="data-item">
-                    <span class="label">Harvest Time</span>
-                    <span class="value">Jan. 1, 2026</span>
-                </div>
-                <div class="data-item">
-                    <span class="label">Harvest Volume</span>
-                    <span class="value">100.0KG / HA</span>
-                </div>
-            </div>
-        </div>
-    </div>
-                
-                                <div class="cardchild">
-        <img src="images/Maize-Farming-Farmsquare.jpg" alt="Yam Barn Background" class="card-background-image">
-
-        <div class="content-overlay">
-            <div class="grid-header">
-                <h1>Kishi Area</h1>
-            </div>
-
-            <div class="grid-main-info">
-                <div class="yam-barn-select">
-                    <span>Yam Barn</span>
-                    <span class="dropdown-icon"></span>
-                </div>
-                <div class="more-details"><a href="#">More Details &gt;</a></div>
-            </div>
-
-            <div class="data-display">
-                <div class="data-item">
-                    <span class="label">Tuber Health</span>
-                    <span class="value">Excellent</span>
-                </div>
-                <div class="data-item">
-                    <span class="label">Harvest Time</span>
-                    <span class="value">Jan. 1, 2026</span>
-                </div>
-                <div class="data-item">
-                    <span class="label">Harvest Volume</span>
-                    <span class="value">100.0KG / HA</span>
-                </div>
-            </div>
-        </div>
-    </div>
-            </div>
-                
 
                 
 
