@@ -175,3 +175,147 @@ styleSheet.innerHTML = `
     }
 `;
 document.head.appendChild(styleSheet);
+
+
+
+
+    const form = document.getElementById('addFarmForm');
+    const farmNameInput = document.getElementById('farmName');
+    const farmLocationInput = document.getElementById('farmLocation');
+    const farmSizeInput = document.getElementById('farmSize');
+    const cropTypeCheckboxes = document.querySelectorAll('input[name="cropType"]');
+    const livestockTypeCheckboxes = document.querySelectorAll('input[name="livestockType"]');
+    const cropTypeError = document.getElementById('cropTypeError');
+    const livestockTypeError = document.getElementById('livestockTypeError');
+
+    const farmNameError = document.getElementById('farmNameError');
+    const farmLocationError = document.getElementById('farmLocationError');
+    const farmSizeError = document.getElementById('farmSizeError');
+
+    // Function to show validation message
+    function showValidationMessage(element, message) {
+        element.textContent = message;
+        element.style.display = 'block';
+        element.parentElement.classList.add('error');
+    }
+
+    // Function to hide validation message
+    function hideValidationMessage(element) {
+        element.textContent = '';
+        element.style.display = 'none';
+        element.parentElement.classList.remove('error');
+    }
+
+    // Validate a group of checkboxes
+    function validateCheckboxGroup(checkboxes, errorElement, errorMessage) {
+        let isChecked = false;
+        for (const checkbox of checkboxes) {
+            if (checkbox.checked) {
+                isChecked = true;
+                break;
+            }
+        }
+        if (!isChecked) {
+            showValidationMessage(errorElement, errorMessage);
+            return false;
+        } else {
+            hideValidationMessage(errorElement);
+            return true;
+        }
+    }
+
+    // Add blur event listeners for immediate feedback on text/number inputs
+    farmNameInput.addEventListener('blur', () => {
+        if (!farmNameInput.value.trim()) {
+            showValidationMessage(farmNameError, 'Farm Name is required.');
+        } else {
+            hideValidationMessage(farmNameError);
+        }
+    });
+
+    farmLocationInput.addEventListener('blur', () => {
+        if (!farmLocationInput.value.trim()) {
+            showValidationMessage(farmLocationError, 'Farm Location is required.');
+        } else {
+            hideValidationMessage(farmLocationError);
+        }
+    });
+
+    farmSizeInput.addEventListener('blur', () => {
+        if (farmSizeInput.value === '' || parseFloat(farmSizeInput.value) <= 0) {
+            showValidationMessage(farmSizeError, 'Farm Size must be a positive number.');
+        } else {
+            hideValidationMessage(farmSizeError);
+        }
+    });
+
+    // Handle form submission
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        let isValid = true;
+
+        // Validate text/number inputs (basic check, more robust validation can be added)
+        if (!farmNameInput.value.trim()) {
+            showValidationMessage(farmNameInput.closest('.form-field').querySelector('.validation-message') || farmNameInput.nextElementSibling, 'Farm Name is required.');
+            isValid = false;
+        } else {
+            hideValidationMessage(farmNameInput.closest('.form-field').querySelector('.validation-message') || farmNameInput.nextElementSibling);
+        }
+
+        if (!farmLocationInput.value.trim()) {
+            showValidationMessage(farmLocationInput.closest('.form-field').querySelector('.validation-message') || farmLocationInput.nextElementSibling, 'Farm Location is required.');
+            isValid = false;
+        } else {
+            hideValidationMessage(farmLocationInput.closest('.form-field').querySelector('.validation-message') || farmLocationInput.nextElementSibling);
+        }
+
+        if (farmSizeInput.value === '' || parseFloat(farmSizeInput.value) <= 0) {
+            showValidationMessage(farmSizeInput.closest('.form-field').querySelector('.validation-message') || farmSizeInput.nextElementSibling, 'Farm Size must be a positive number.');
+            isValid = false;
+        } else {
+            hideValidationMessage(farmSizeInput.closest('.form-field').querySelector('.validation-message') || farmSizeInput.nextElementSibling);
+        }
+
+
+        // Validate checkbox groups
+        const cropTypeValid = validateCheckboxGroup(
+            cropTypeCheckboxes,
+            cropTypeError,
+            'Please select at least one crop type.'
+        );
+        const livestockTypeValid = validateCheckboxGroup(
+            livestockTypeCheckboxes,
+            livestockTypeError,
+            'Please select at least one livestock type.'
+        );
+
+        if (!cropTypeValid || !livestockTypeValid) {
+            isValid = false;
+        }
+
+        if (isValid) {
+            // If all validations pass, you can proceed with form submission (e.g., via AJAX)
+            alert('Form submitted successfully!\n' +
+                  'Farm Name: ' + farmNameInput.value + '\n' +
+                  'Farm Location: ' + farmLocationInput.value + '\n' +
+                  'Farm Size: ' + farmSizeInput.value + '\n' +
+                  'Crop Types: ' + Array.from(cropTypeCheckboxes).filter(cb => cb.checked).map(cb => cb.value).join(', ') + '\n' +
+                  'Livestock Types: ' + Array.from(livestockTypeCheckboxes).filter(cb => cb.checked).map(cb => cb.value).join(', '));
+            // In a real application, you'd send this data to a server:
+            // form.submit(); // or fetch('/api/add-farm', { method: 'POST', body: new FormData(form) });
+            form.reset(); // Clear the form after successful submission
+        } else {
+            alert('Please correct the errors in the form.');
+        }
+    });
+
+    // Initial message hiding for checkbox groups if they exist
+    if (cropTypeError) cropTypeError.style.display = 'none';
+    if (livestockTypeError) livestockTypeError.style.display = 'none';
+
+    // Add validation message elements next to the input fields for required text fields
+    // This makes sure the validation message exists where the JS expects it.
+    // It's a bit of a hack if you don't want to manually add them in HTML.
+    // A better approach is to include them in the HTML from the start.
+    // I've added them to the HTML, so this part is not strictly necessary anymore.

@@ -1727,8 +1727,9 @@ ul {
 .validation-message {
     color: #e74c3c;
     font-size: 0.85em;
-    margin-top: 5px;
-    display: none; /* Hidden by default, shown by JS */
+    /* margin-top: 73px; */
+    display: none;
+    /* margin-left: -158px; */
 }
 
 .form-field.error .validation-message,
