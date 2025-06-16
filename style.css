@@ -1276,7 +1276,7 @@ ul {
 
     /* Ensure earnings cards stack within their container on small screens */
     .earnings-cards-container {
-        flex-direction: column;
+        flex-direction: row;
         gap: 20px;
     }
     .earnings-card {
@@ -1549,7 +1549,13 @@ ul {
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
     .data-display {
-        flex-direction: column; /* Stack data items vertically */
+        flex-direction: row; /* Stack data items vertically */
+    }
+
+    .main-card{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Creates 3 equal columns initially */
+        gap: 25px;
     }
 }
 
